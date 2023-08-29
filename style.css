@@ -24,10 +24,12 @@ html {
 }
 
 body {
-    background: var(--main-color);
+    width: 100%;
+    height: 100%;
+    background: var(--text-color);
     color: var(--main-color); 
     font-size: 20px;
-    margin-top: 10rem;
+    margin-top: 8%;
 }
 
 .header {
@@ -45,78 +47,60 @@ body {
 
 .header h1 {
     color: var(--text-color);
+    margin-left: 50rem;
 }
 
 .header span{
     color: var(--foot-color);
 }
 
-.home-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    gap: 2.5rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
+.btn-box {
+    width: 16rem;
+    height: 4.2rem;
+    margin-left: 32rem;
 }
 
-.home-container .home-box {
+.btn-box .btn {
     position: relative;
-    border-radius: 2rem;
-    box-shadow: 0 0 1rem var(--foot-color);
-    overflow: hidden;
     display: flex;
-}
-
-.home-box img {
-    width: 100%;
-    transition: 0.5s ease;
-}
-
-.home-box:hover img {
-    transform: scale(1.1);
-}
-
-.home-box .home-layer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    background: var(--foot-color);
+    box-shadow: 0 0 0.5rem #1083b1;
+    justify-content: center;
+    align-items: center;
+    width: 13rem;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.1), var(--foot-color));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 0 4rem;
-    transform: translateY(100%);
-    transition: 0.5s ease;
-}
-
-.home-box:hover .home-layer {
-    transform: translateY(-0%);
-}
-
-.home-layer h4 {
-    font-size: 3rem;
-    color: var(--text-color);
-}
-
-.home-layer a {
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
-    width: 5rem;
-    height: 5rem;
-    background: var(--text-color);
-    border-radius: 50%;
-}
-
-.home-layer a i {
-    font-size: 2.5rem;
+    border-radius: 4rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
     color: var(--head-color);
-    margin-top: 1.3rem;
+}
+
+iframe {
+    width: 20%;
+    height: 30vh; 
+    display: fixed;
+    position: fixed;
+    left: 77%;
+    top: 58%;
+    z-index: 1;
+}
+
+.home {
+    display: flex;
+    margin: 5rem;
+    align-items: center;
+}
+
+.home img {
+    width: 30%;
+    height: 30vh;
+}
+
+.home h1 {
+    float: right;
+    margin-left: 2rem;
+    color: var(--head-color);
 }
 
 .footer {
@@ -166,8 +150,23 @@ body {
 }
 
 @media (max-width: 991px) {
-    .header {
-        padding: 2rem 4%;
+    .header h1{
+      margin-left: 18rem;
+      margin-right: 0;
+    }
+
+    .btn-box {
+      margin-left: 5rem;
+      margin-right: 0;
+    }
+
+    .home {
+      margin-top: 10rem;
+    }
+
+    .home img {
+      width: 100%;
+      height: 50vh;
     }
 
     .footer {
@@ -176,22 +175,40 @@ body {
 }
 
 @media (max-width: 768px) {
+    body {
+      margin-top: 12rem;
+    }
     
     .header {
-        background: var(--head-color);
-        align-items: center;
+      background: var(--head-color);
+      right: 0;
     }
 
     .header h1 {
-        font-size: 34px;
+      font-size: 26px;
+      margin-left: 20%;
     }
 
-    .home-container {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
+    .btn-box {
+      margin-left: 1.5rem;
+    }
+
+    .home {
+        flex-direction: column;
+    }
+
+    .home img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .home h1 {
+        font-size: 24px;
+        margin-top: 2rem;
     }
 
     .footer {
+      flex-direction: column;
         display: flex;
         padding: 2rem;
         margin-top: 4rem;
@@ -215,22 +232,54 @@ body {
 html {
     font-size: 50%;
 }
-
+  .header h1 {
+    margin-left: 3rem;
+  }
 }
 
 @media (max-width: 462px) {
-    .home-container {
+    body {
         margin-top: 15rem;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        width: auto;
+        height: auto;
+    }
+
+    .header h1{
+      font-size: 20px;
+      margin-right: 0;
+    }
+
+    iframe {
+        height: auto;
+        width: 45%;
+        left: 54%;
+        top: 55%;
+    }
+
+    .home {
+        flex-direction: column;
+    }
+
+    .home img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .home h1 {
+        font-size: 24px;
+        margin-top: 2rem;
     }
 
     .footer {
-        flex-direction: column-reverse;
+      flex-direction: column;
+      height: 17vh;
     }
 
     .footer p {
-        margin-top: 2rem;
         text-align: center;
+    }
+
+    .footer a i {
+      margin-top: 0;
     }
 }
