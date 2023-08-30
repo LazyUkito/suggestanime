@@ -342,6 +342,10 @@ body {
     margin-top: 6rem;
   }
 
+.contact-form {
+width:100%;
+}
+
   .contact-form h2 {
     font-size: 38px;
     margin-bottom: 2rem;
@@ -375,6 +379,11 @@ body {
   .contact-form .send-btn {
     margin-left: 35%;
   }
+
+.footer {
+    width: 100%;
+    height: 15vh;
+}
 
   .footer-text p {
     text-align: center;
