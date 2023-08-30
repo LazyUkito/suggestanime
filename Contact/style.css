@@ -348,13 +348,13 @@ body {
   }
 
   .contact-form .text-box {
-    width: 85%;
+    width: 85vw;
     margin-bottom: 4rem;
     margin-top: 1rem;
   }
 
   .contact-form textarea {
-    width: 87%;
+    width: 87vw;
   }
 
   .contact-form .mov {
