@@ -334,35 +334,49 @@ html {
 
 @media (max-width: 462px) {
     body {
-        margin-top: 3rem;
+        margin-top: 13rem;
         width: auto;
         height: auto;
     }
 
+    .header {
+      height: 8vh;
+    }
+
     .header h1{
-      font-size: 20px;
-      margin-right: 0;
+      font-size: 32px;
+    }
+
+    #menu-icon {
+      margin-right: 4rem;
+    }
+
+    .navbar .active {
+      width : 30vw;
+      height: 5vh;
     }
 
   .navbar a {
-    margin-left: 30rem;
+    margin-left: 35rem;
   }
 
     iframe {
         width: 55%;
+        height: 22rem;
         left: 44%;
-        top: 60%;
+        top: 72%;
     }
 
     .home {
         flex-direction: column;
-      margin: 0;
+      margin-top: 5rem;
+      text-align: center;
     }
 
     .home img {
-        width: 100%;
+        width: 80%;
         height: 100%;
-      margin-top: 7rem;
+        margin-top: 1rem;
     }
 
     .home h1 {
