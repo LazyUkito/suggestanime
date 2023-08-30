@@ -9,12 +9,12 @@
     outline: none;
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
-  }
+}
 
 :root {
     --text-color: #ffffff;
     --head-color: #000000;
-    --main-color: #080808d2;
+    --main-color: #797777d2;
     --foot-color: #00eeff;
 }
 
@@ -24,12 +24,8 @@ html {
 }
 
 body {
-    width: 100%;
-    height: 100%;
-    background: var(--text-color);
-    color: var(--main-color); 
-    font-size: 20px;
-    margin-top: 8%;
+    background: var(--main-color);
+    color: var(--text-color);
 }
 
 .header {
@@ -37,70 +33,105 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem;
     background: var(--head-color);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    z-index: 1;
+    z-index: 100;
+    transition: 0.3s;
+  height: 10%;
+}
+
+.header.sticky {
+    background: var(--head-color);
 }
 
 .header h1 {
-    color: var(--text-color);
-    margin-left: 50rem;
-}
-
-.header span{
-    color: var(--foot-color);
-}
-
-.btn-box {
-    width: 16rem;
-    height: 4.2rem;
-    margin-left: 32rem;
-}
-
-.btn-box .btn {
     position: relative;
     display: flex;
-    background: var(--foot-color);
-    box-shadow: 0 0 0.5rem #1083b1;
     justify-content: center;
     align-items: center;
-    width: 13rem;
-    height: 100%;
-    border-radius: 4rem;
-    font-size: 1.8rem;
-    font-weight: 600;
-    letter-spacing: 0.1rem;
-    color: var(--head-color);
+    width: 100%;
+  margin-left: 10%;
+  font-size: 32px;
+    z-index: 1;
+}
+
+.header h1 span {
+  margin-left: 1rem;
+  color: var(--foot-color);
+}
+
+.navbar {
+    position: relative;
+}
+
+.navbar a {
+  margin-left: -20%;
+  transition: 0.3s;
+  font-size: 24px;
+}
+
+.navbar .active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 0 0.5rem #1083b1;
+  width: 15rem;
+  height: 7vh;
+  border-radius: 4rem;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: var(--head-color);
+  background: var(--foot-color);
+}
+
+.navbar a:hover,
+.navbar a:active {
+    color: var(--text-color);
+
+}
+
+#menu-icon {
+    position: relative;
+    font-size:3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
 }
 
 iframe {
-    width: 20%;
-    height: 30vh; 
+    width: 30%;
+  height: 30%;
     display: fixed;
     position: fixed;
-    left: 77%;
-    top: 58%;
+    left: 70%;
+    top: 61%;
     z-index: 1;
 }
 
 .home {
     display: flex;
-    margin: 5rem;
+    margin: 10rem;
     align-items: center;
 }
 
 .home img {
-    width: 30%;
-    height: 30vh;
+    width: 50%;
+    height: 40vh;
 }
 
 .home h1 {
     float: right;
+  font-size: 36px;
     margin-left: 2rem;
-    color: var(--head-color);
+    color: var(--text-color);
+}
+
+.home h1:hover {
+  color: var(--main-color);
 }
 
 .footer {
@@ -141,7 +172,6 @@ iframe {
     color: var(--text-color);
 }
 
-
 /* BREAKPOINTS */
 @media (max-width: 1200px) {
     html {
@@ -150,67 +180,88 @@ iframe {
 }
 
 @media (max-width: 991px) {
-    iframe {
+    .header {
+        width: 100%;
+      margin: 0;
+      height: 15vh;
+    }
+
+  iframe {
       width: 40%;
       left: 60%;
+      top: 60%;
     }
   
-    .header h1{
-      margin-left: 18rem;
-      margin-right: 0;
-    }
-
-    .btn-box {
-      margin-left: 5rem;
-      margin-right: 0;
-    }
-
-    .home {
-      margin-top: 10rem;
-    }
-
-    .home img {
-      width: 100%;
-      height: 50vh;
-    }
+  .home{
+    margin-top: 12rem;
+  }
 
     .footer {
-        height: 12vh;
+        height: 10vh;
     }
 }
 
 @media (max-width: 768px) {
-    body {
-      margin-top: 12rem;
+  body {
+      margin-top: 5rem;
     }
 
     iframe {
       width: 50%;
       left: 50%;
-      top: 55%;
+      top: 58%;
     }
   
     .header {
-      background: var(--head-color);
-      right: 0;
+        background: var(--head-color);
+      height: 15vh;
     }
 
-    .header h1 {
-      font-size: 26px;
-      margin-left: 20%;
+    #menu-icon {
+        display: block;
     }
 
-    .btn-box {
-      margin-left: 1.5rem;
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 1rem 4%;
+        background: transparent;
+        box-shadow: 0 0.5rem 1rem rbga(0, 0, 0, 0.2);
+        z-index: 1;
+        transition: 0.25s ease;
+        transition-delay: 0.25s;
     }
 
-    .home {
-        flex-direction: column;
+    .navbar.active {
+        left: 0;
+        transition-delay: 0s;
+    }
+  
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin-left: 40rem;
+        transform: translateX(180rem);
+        transition: 0.1s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar.active a {
+      transform:translateX(0);
+      transition-delay: 0.25s;
+    }
+
+  .home {
+    flex-direction: column;
+    margin: 0;
     }
 
     .home img {
-        width: 100%;
+        width: 80%;
         height: 100%;
+       margin-top: 7rem;
     }
 
     .home h1 {
@@ -245,18 +296,45 @@ iframe {
 html {
     font-size: 50%;
 }
+
+  body {
+        margin-top: 3rem;
+        width: auto;
+        height: auto;
+    }
+
+  iframe {
+        width: 55%;
+        left: 44%;
+        top: 60%;
+    }
+  
   .header h1 {
     margin-left: 3rem;
   }
 
+  .home {
+        flex-direction: column;
+      margin: 0;
+    }
+
+  .home img {
+        width: 100%;
+        height: 100%;
+      margin-top: 7rem;
+    }
+
   .footer {
-    height: 8vh;
+    display: flex;
+      height: 10vh;
+      bottom: 0;
+      margin-top: 5rem;
   }
 }
 
 @media (max-width: 462px) {
     body {
-        margin-top: 15rem;
+        margin-top: 3rem;
         width: auto;
         height: auto;
     }
@@ -266,20 +344,25 @@ html {
       margin-right: 0;
     }
 
+  .navbar a {
+    margin-left: 30rem;
+  }
+
     iframe {
-        height: auto;
-        width: 45%;
-        left: 54%;
+        width: 55%;
+        left: 44%;
         top: 60%;
     }
 
     .home {
         flex-direction: column;
+      margin: 0;
     }
 
     .home img {
         width: 100%;
         height: 100%;
+      margin-top: 7rem;
     }
 
     .home h1 {
@@ -291,13 +374,33 @@ html {
       display: flex;
       height: 10vh;
       bottom: 0;
+      margin-top: 5rem;
     }
 
     .footer p {
-        text-align: left;
+      text-align: left;
+      margin-left: 4rem;
     }
 
     .footer a i {
       margin-top: 0;
+      margin-right: 1rem;
+    }
+}
+
+@media (max-width: 371px) {
+    .home {
+        justify-content: center;
+    }
+
+    .home-content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-content {
+        font-size: 5rem;
     }
 }
