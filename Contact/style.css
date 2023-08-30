@@ -218,6 +218,7 @@ body {
     margin-right: -1rem;
     margin-left: 2rem;
 }
+}
 
 @media (max-width: 768px) {  
     .header {
@@ -328,20 +329,32 @@ body {
 }
 
 @media (max-width: 462px) {
+  .header {
+    height: 8vh;
+  }
+
+  .header h1 {
+    font-size: 38px;
+    font-weight: 600;
+  }
   .contact-img img {
     margin-left: 0;
     margin-top: 6rem;
   }
 
   .contact-form h2 {
+    font-size: 38px;
     margin-bottom: 2rem;
   }
 
   .contact-form .text-box {
-    width: 100%;
+    width: 85%;
     margin-bottom: 4rem;
     margin-top: 1rem;
-    margin-right: 10%;
+  }
+
+  .contact-form textarea {
+    width: 87%;
   }
 
   .contact-form .mov {
@@ -360,7 +373,7 @@ body {
   }
 
   .contact-form .send-btn {
-    margin-left: 33%;
+    margin-left: 35%;
   }
 
   .footer-text p {
