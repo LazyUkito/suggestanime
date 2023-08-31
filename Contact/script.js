@@ -17,6 +17,6 @@ submit.addEventListener('submit',(e)=>{
                 + "<br> Email: " + document.getElementById("email").value
                 + "<br> Message: " + document.getElementById("message").value
     }).then(
-      message => alert("message sent")
+      message => alert(message)
     );
 });
