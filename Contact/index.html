@@ -5,18 +5,9 @@
         <meta name="viewport" content="width=device-width">
         <title>contact</title>
         <link href="style.css" rel="stylesheet" type="text/css" />
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheets" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheets" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">  
     </head>
     <body>
-        <!-- alert message start
-        <div class="alert-success">
-            <span>Message Sent! Thank you for contacting us.</span>
-        </div>
-        <div class="alert-error">
-            <span>Something went wrong! Please try again.</span>
-        </div>
-        alert message end -->
         <header class="header" id="header">
             <a href="https://suggestanime.github.io/suggestanime/"><h1>SUGGEST <span>ANI-ME</span></h1></a>
         </header>
@@ -25,19 +16,17 @@
         <div class="contact-img">
             <img src="Media/1.gif" alt="">
         </div>
-        <div class="contact-form">
-            <h2>Contact Us</h2>
-            <form class="contact" action="" method="post">
-                <div class="mov">
-                <p>Name </p>
-                <input type="text" name="name" class="text-box" placeholder="Full Name" required>
-                <p>Email </p>
-                <input type="email" name="email" class="text-box" placeholder="Email Address" required>
-                </div>
-                <p>Comment </p>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <input type="submit" name="submit" class="send-btn" value="Send">
-            </form>
+        <div class="container">
+          <form action="#" onsubmit="sendEmail(); reset(); return false">
+            <h3>GET IN TOUCH</h3>
+            <p>Name*</p>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <p>Email*</p>
+            <input type="email" id="email" placeholder="Email ID" required>
+            <p>Message*</p>
+            <textarea id="message" rows="8" placeholder="Type Here...."></textarea>
+            <button type="submit">Send</button>
+          </form>
         </div>
     <footer class="footer">
         <div class="footer-text">
@@ -45,6 +34,7 @@
         </div>
     </footer>
         <!-- contact section end -->
+      <script src="https://smtpjs.com/v3/smtp.js"></script>     
       <script src="script.js"></script>
     </body>
 </html>
